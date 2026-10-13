@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-sans: var(--font-instrument), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, monospace;
+}
+
+@theme {
+  /* Surfaces */
+  --color-bg: #121110;
+  --color-card: #191816;
+  --color-preview: #0d0d0c;
+  --color-cell: #181816;
+  --color-bubble: #2a2824;
+  --color-bubble-alt: #1f1e1b;
+
+  /* Text */
+  --color-hi: #ece9e4;
+  --color-mid: #d9d5ce;
+  --color-body: #a39e95;
+  --color-muted: #6f6a62;
+
+  /* Accents */
+  --color-amber: #f0b45a;
+  --color-green: #8fd18a;
+  --color-red: #e0806a;
+
+  --animate-blink: blink 1s steps(1) infinite;
+
+  @keyframes blink {
+    0%,
+    49% {
+      opacity: 1;
+    }
+    50%,
+    100% {
+      opacity: 0;
+    }
+  }
+}
+
+@layer base {
+  html,
+  body {
+    background: var(--color-bg);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--color-body);
+  }
+
+  a {
+    color: var(--color-hi);
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: var(--color-amber);
+  }
+
+  ::selection {
+    background: var(--color-amber);
+    color: var(--color-bg);
+  }
+}
